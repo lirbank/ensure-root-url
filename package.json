@@ -21,7 +21,7 @@
   "types" : "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "test": "npm prettier && npm lint && npm build",
+    "test": "npm run prettier && npm run lint && npm run build",
     "lint": "tslint 'src/**/*.ts'",
     "lint:fix": "tslint --fix 'src/**/*.ts'",
     "prettier": "prettier --list-different \"src/**/*.ts\"",
