@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "target": "es5",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "dist"
+  }
+}

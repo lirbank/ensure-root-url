@@ -1,0 +1,38 @@
+{
+  "name": "ensure-root-url",
+  "description": "An express middleware that redirects requests where the protocol, hostname or port does not match the provided root URL",
+  "version": "1.0.0",
+  "author": "Mikael Lirbank",
+  "license": "MIT",
+  "homepage": "https://github.com/lirbank/ensure-root-url#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lirbank/ensure-root-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lirbank/ensure-root-url/issues"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "heroku"
+  ],
+  "main": "dist/index.js",
+  "types" : "src/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "npm prettier && npm lint && npm build",
+    "lint": "tslint 'src/**/*.ts'",
+    "lint:fix": "tslint --fix 'src/**/*.ts'",
+    "prettier": "prettier --list-different \"src/**/*.ts\"",
+    "prettier:fix": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "prettier": "^1.11.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  }
+}
