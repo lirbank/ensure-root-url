@@ -2,19 +2,16 @@ import url from 'url';
 import {Request, Response, NextFunction} from 'express';
 
 export interface EnsureRootUrlOptions {
-  ignoreHostnames: string[];
-  redirectType: 'permanent' | 'temporary';
+  ignoreHostnames?: string[];
+  redirectType?: 'permanent' | 'temporary';
 }
 
 export default function ensureRootUrl(
   rootUrl: string,
-  options: EnsureRootUrlOptions = {
-    ignoreHostnames: [],
-    redirectType: 'temporary',
-  },
+  options: EnsureRootUrlOptions = {},
 ) {
   return (req: Request, res: Response, next: NextFunction) => {
-    const {ignoreHostnames, redirectType} = options;
+    const {ignoreHostnames = [], redirectType = 'temporary'} = options;
 
     // The requested URL
     const requestedURL = url.parse(

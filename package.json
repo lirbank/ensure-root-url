@@ -18,7 +18,7 @@
     "heroku"
   ],
   "main": "dist/index.js",
-  "types" : "src/index.d.ts",
+  "types" : "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "npm prettier && npm lint && npm build",
